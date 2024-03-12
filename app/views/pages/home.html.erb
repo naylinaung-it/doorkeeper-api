@@ -1,0 +1,18 @@
+<h1>Welcome to <%= current_user.email %></h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+<% end %>
+
+<p>Testing with doorkeeper Gem </p>
+
+<div class="container">
+    <ul>
+        <li><%= link_to "Web Books", books_path %></li>
+        <li>API v1 Books</li>
+        <li>API v1 Android Books</li>
+    </ul>
+</div>
